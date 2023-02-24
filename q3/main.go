@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func processOne() {
+
 	fmt.Println("Process 1 completed")
 
 }
@@ -12,6 +16,10 @@ func processTwo() {
 
 }
 func main() {
-	processOne()
-	processTwo()
+	go processOne()
+	go processTwo()
+
+	fmt.Println("process 3")
+	time.Sleep(1000 * time.Millisecond)
+
 }
